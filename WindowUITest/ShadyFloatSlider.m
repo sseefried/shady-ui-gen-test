@@ -12,7 +12,7 @@
 
 - (id)initWithUniform:(NSString*)uniform minValue:(double)minValue maxValue:(double)maxValue
 {
-    self = [super initWithFrame:NSMakeRect(0,0,1000,20)];
+    self = [super initWithFrame:NSMakeRect(0,0,100,100)];
     if (self) {
       self.uniform = uniform;
       [self setMinValue:minValue];

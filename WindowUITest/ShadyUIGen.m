@@ -102,53 +102,36 @@
   
   NSView *view = [window contentView];
 
+
+  NSControl *lastControl = nil;
   for (NSDictionary *uiElement in uiSpec) {
     NSControl *control = [ShadyUIGen controlFromUIElem: uiElement];
-    NSLog(@"Control: %@", control);
+    [control setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
     [view addSubview: control];
-  }
-  
-//  ShadyFloatSlider *slider  = [[ShadyFloatSlider alloc] initWithFrame:NSMakeRect(0,30,50,20)
-//                                                              uniform:@"Slider 1"
-//                                                             minValue:0
-//                                                             maxValue:10];
-//  ShadyFloatSlider *slider2 = [[ShadyFloatSlider alloc] initWithFrame:NSMakeRect(0,0,50,20)
-//                                                              uniform:@"Slider 2"
-//                                                             minValue:10
-//                                                             maxValue:15];
-  
-//  NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(slider, slider2);
-  
-  // -----------------------------------------------------------------------------
-//  NSArray *controls = [NSArray arrayWithObjects: slider, slider2, nil];
-//  
+    NSDictionary *viewsDictionary;
+    if (lastControl) {
+      viewsDictionary = @{ @"current": control, @"last": lastControl };
+    } else {
+      viewsDictionary = @{ @"current": control };
+    }
 
-//  
-//  for (id control in controls) {
-//    // For slider to dynamically size itself to the parent window this must be set to NO
-//    [control setTranslatesAutoresizingMaskIntoConstraints: NO];
-//    [view addSubview: control]; // FIXME: subsume this into addControl
-//  }
-//  
-//  // Constraint needs to be parsed after [slider] is added to superview.
-//  NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-[slider(>=100)]-|"
-//                                                                 options: 0
-//                                                                 metrics:nil
-//                                                                   views:viewsDictionary];
-//  [view addConstraints:constraints];
-//  
-//  constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-[slider2(>=100)]-|"
-//                                                        options: 0
-//                                                        metrics:nil
-//                                                          views:viewsDictionary];
-//  [view addConstraints:constraints];
-//  
-//  
-//  constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=20)-[slider]-[slider2]-|"
-//                                                        options: 0
-//                                                        metrics:nil
-//                                                          views:viewsDictionary];
-//  [view addConstraints:constraints];
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-[current(>=100)]-|"
+                                               options: 0
+                                               metrics:nil
+                                               views:viewsDictionary];
+    [view addConstraints:constraints];
+    if (lastControl) {
+
+      constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=20)-[current(>=20)]-[last(>=20)]-|"
+                                        options: 0
+                                        metrics:nil
+                                        views:viewsDictionary];
+      [view addConstraints: constraints];
+
+    }
+    lastControl = control;
+  }
   return window;
 }
 

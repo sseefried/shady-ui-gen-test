@@ -15,7 +15,7 @@
   - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
   NSError *e = nil;
-  self.theNewWindow = [ShadyUIGen uiFromSpec:@"[ { \"sort\": \"float_slider\", \"title\": \"Number of spikes\", \"glslUniform\": \"spikes\", \"min\": 1, \"max\": 10 }]" error:&e];
+  self.theNewWindow = [ShadyUIGen uiFromSpec:@"[ { \"sort\": \"float_slider\", \"title\": \"Number of spikes\", \"glslUniform\": \"spikes\", \"min\": 1, \"max\": 10 }, { \"sort\": \"float_slider\", \"title\": \"Number of curves\", \"glslUniform\": \"curves\", \"min\": 1, \"max\": 10 }]" error:&e];
   if (e) {
     NSLog(@"ShadyUIGen errors %@", e);
   }

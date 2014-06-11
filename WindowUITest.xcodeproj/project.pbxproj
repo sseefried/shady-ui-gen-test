@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113402D21946D6FE00FB51E7 /* ShadyFloatSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 113402D11946D6FE00FB51E7 /* ShadyFloatSlider.m */; };
+		113402D61947E8C600FB51E7 /* ShadyUIGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 113402D51947E8C600FB51E7 /* ShadyUIGen.m */; };
 		11545F22193D411C00EE42D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11545F21193D411C00EE42D8 /* Cocoa.framework */; };
 		11545F2C193D411C00EE42D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11545F2A193D411C00EE42D8 /* InfoPlist.strings */; };
 		11545F2E193D411C00EE42D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11545F2D193D411C00EE42D8 /* main.m */; };
@@ -31,6 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113402D01946D6FE00FB51E7 /* ShadyFloatSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadyFloatSlider.h; sourceTree = "<group>"; };
+		113402D11946D6FE00FB51E7 /* ShadyFloatSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadyFloatSlider.m; sourceTree = "<group>"; };
+		113402D31946D77A00FB51E7 /* ShadyControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShadyControl.h; sourceTree = "<group>"; };
+		113402D41947E8C600FB51E7 /* ShadyUIGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadyUIGen.h; sourceTree = "<group>"; };
+		113402D51947E8C600FB51E7 /* ShadyUIGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadyUIGen.m; sourceTree = "<group>"; };
 		11545F1E193D411C00EE42D8 /* WindowUITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WindowUITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11545F21193D411C00EE42D8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		11545F24193D411C00EE42D8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -120,6 +127,10 @@
 				11545F36193D411C00EE42D8 /* MainMenu.xib */,
 				11545F39193D411C00EE42D8 /* Images.xcassets */,
 				11545F28193D411C00EE42D8 /* Supporting Files */,
+				113402D01946D6FE00FB51E7 /* ShadyFloatSlider.h */,
+				113402D11946D6FE00FB51E7 /* ShadyFloatSlider.m */,
+				113402D41947E8C600FB51E7 /* ShadyUIGen.h */,
+				113402D51947E8C600FB51E7 /* ShadyUIGen.m */,
 			);
 			path = WindowUITest;
 			sourceTree = "<group>";
@@ -132,6 +143,7 @@
 				11545F2D193D411C00EE42D8 /* main.m */,
 				11545F2F193D411C00EE42D8 /* WindowUITest-Prefix.pch */,
 				11545F30193D411C00EE42D8 /* Credits.rtf */,
+				113402D31946D77A00FB51E7 /* ShadyControl.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -252,6 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113402D61947E8C600FB51E7 /* ShadyUIGen.m in Sources */,
+				113402D21946D6FE00FB51E7 /* ShadyFloatSlider.m in Sources */,
 				11545F35193D411C00EE42D8 /* AppDelegate.m in Sources */,
 				11545F2E193D411C00EE42D8 /* main.m in Sources */,
 			);
@@ -466,6 +480,7 @@
 				11545F51193D411C00EE42D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		11545F52193D411C00EE42D8 /* Build configuration list for PBXNativeTarget "WindowUITestTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +489,7 @@
 				11545F54193D411C00EE42D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

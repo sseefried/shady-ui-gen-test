@@ -12,4 +12,7 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
+@property (retain) NSWindow *theNewWindow;
+@property          NSSlider *slider;
+
 @end

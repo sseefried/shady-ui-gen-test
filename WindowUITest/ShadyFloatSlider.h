@@ -9,10 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import "ShadyControl.h"
 
-@interface ShadyFloatSlider : NSSlider <ShadyControl>
+@interface ShadyFloatSlider : NSView <ShadyControl>
 
-@property NSString *uniform;
+@property NSSlider    *slider;
+@property NSTextField *titleLabel;
+@property NSTextField *minLabel;
+@property NSTextField *maxLabel;
+@property NSString    *uniform;
 
-- (id)initWithUniform:(NSString *)uniform minValue:(double)minValue maxValue:(double)maxValue;
+- (id)initWithUniform:(NSString *)uniform title:(NSString *)title minValue:(double)minValue maxValue:(double)maxValue;
 
 @end

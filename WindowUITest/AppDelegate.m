@@ -43,11 +43,13 @@
   
   
   
-  ShadyFloatSlider *slider  = [[ShadyFloatSlider alloc] initWithUniform:@"Slider 1"
-                                                             minValue:0
+  ShadyFloatSlider *slider  = [[ShadyFloatSlider alloc] initWithUniform:@"slider1"
+                                                                  title: @"Slider 1"
+                                                               minValue:0
                                                              maxValue:10];
-  ShadyFloatSlider *slider2 = [[ShadyFloatSlider alloc] initWithUniform:@"Slider 2"
-                                                             minValue:10
+  ShadyFloatSlider *slider2 = [[ShadyFloatSlider alloc] initWithUniform:@"slider2"
+                                                                  title:@"Slider 2"
+                                                               minValue:10
                                                              maxValue:15];
   
   NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(slider, slider2);

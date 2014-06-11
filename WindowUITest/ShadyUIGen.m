@@ -77,7 +77,8 @@
     NSString *uniform = [uiElement valueForKey:@"glslUniform"];
     NSNumber *minValue = [uiElement valueForKey:@"min"];
     NSNumber *maxValue = [uiElement valueForKey:@"max"];
-    slider = [[ShadyFloatSlider alloc] initWithUniform:uniform minValue:[minValue doubleValue] maxValue:[maxValue doubleValue]];
+    NSString *title    = [uiElement valueForKey:@"title"];
+    slider = [[ShadyFloatSlider alloc] initWithUniform:uniform title:title minValue:[minValue doubleValue] maxValue:[maxValue doubleValue]];
   }
   return slider;
 }
@@ -104,7 +105,8 @@
 
 
   NSControl *lastControl = nil;
-  for (NSDictionary *uiElement in uiSpec) {
+  NSEnumerator *enumerator = [uiSpec reverseObjectEnumerator];
+  for (NSDictionary *uiElement in enumerator) {
     NSControl *control = [ShadyUIGen controlFromUIElem: uiElement];
     [control setTranslatesAutoresizingMaskIntoConstraints:NO];
     
